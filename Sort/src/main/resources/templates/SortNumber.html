@@ -1,0 +1,98 @@
+<html ng-app="SortApp">
+<head>
+      <title>Sort Application</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <script src="/js/angular.min.js"></script>
+      <script src="/js/ngStorage.min.js"></script>
+      <script src="/js/app.js"></script>
+      <script src="/js/appConfig.service.js"></script>
+      <script src="/js/sort.controller.js"></script>
+      <link rel="stylesheet" href="/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="/css/history.css" />
+</head>
+<body>
+	<div class="container">
+		<!-- Header -->
+		<div class="page-header">
+			<h1>Sort Application</h1>
+			<p>
+				Sort a given amount of numerical values by randomly change position of the values in ascending order. 
+				And displays all persisted results.
+			</p>
+		</div>
+
+		<!-- Form -->
+		<div ng-controller="SortCtrl as ctrl">
+			<form name="userForm" ng-submit="submitForm(userForm.$valid)"
+				novalidate="novalidate">
+				<label>Enter Numbers: </label>
+				<input type="text" name="unsortednumbers" class="form-control"
+					ng-model="unsortednumbers" ng-required="true"
+					placeholder="Enter un sorted numbers for example: 5, 1, 89, 55, 7, 88, 100, 23, 66" />
+				<button type="submit" ng-disabled="!userForm.$valid"
+					class="btn btn-primary">Sort Numbers</button>
+			</form>
+
+			<div class="alert alert-success" ng-show="showSuccessAlert">
+				<p><strong>Sort Result</strong></p>
+				<p>Given Numbers: {{unSortedNumbers}}</p>
+				<p>Sorted Numbers: {{sortedNumbers}}</p>
+				<p>Duration: {{duration}}</p>
+				<p>Changes of Positions: {{swapCount}}</p>
+			</div>
+
+			<div class="alert alert-danger" ng-show="showFailureAlert">
+				<strong> {{postResultMessage}}</strong>
+			</div>
+
+			<hr />
+			<!-- History Log -->
+			<div>
+				<label>Last Record</label>
+				<div class="tableElement">
+					<table class="gridtable">
+						<tr>
+							<th>S.No</th>
+							<th>Un Sorted Numbers</th>
+							<th>Sorted Numbers</th>
+							<th>Duration</th>
+							<th>No of Swaps</th>
+						</tr>
+						<tr>
+							<td>{{latestSortHistory.id}}</td>
+							<td>{{latestSortHistory.unSortedNumbers}}</td>
+							<td>{{latestSortHistory.sortedNumbers}}</td>
+							<td>{{latestSortHistory.duration}}</td>
+							<td>{{latestSortHistory.swapCount}}</td>
+						</tr>
+
+					</table>
+				</div>
+			</div>
+			<hr/>
+			<div>
+				<label>Previous Sort Results</label>
+				<table class="gridtable table-hover">
+				  <thead class="thead-dark">
+					<tr>
+							<th>S.No</th>
+							<th>Un Sorted Numbers</th>
+							<th>Sorted Numbers</th>
+							<th>Duration</th>
+							<th>No of Swaps</th>
+						</tr>
+						</thead>
+						<tr	ng-repeat="rec in history">
+							<td>{{rec.id}}</td>
+							<td>{{rec.unSortedNumbers}}</td>
+							<td>{{rec.sortedNumbers}}</td>
+							<td>{{rec.duration}}</td>
+							<td>{{rec.swapCount}}</td>
+						</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
