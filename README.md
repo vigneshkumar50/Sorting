@@ -1,11 +1,13 @@
 # Sort Application
 
 # Requirement Understandings:
-   - Application can be sort a numerical values in ascending order.
+   - Application can sort a numerical values in ascending order.
    - Sort a given number of numerical values by randomly changing position of the values.
    - Should show the sorted numbers in ascending order with time duration of sorting process and numbers of position changes swapped. 
    - Should show all previous results.
    - The previous results must also remain if the application is restarted.
+   - The previous results are retrieved from REST API and Browser Local storage using angularJS for performance improvement
+   
   
 # Technology Used
   Spring Tool Suite 
