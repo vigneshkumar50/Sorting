@@ -1,8 +1,8 @@
 # Sort Application
 
-# Reuirement Understandings:
+# Requirement Understandings:
    - Application can be sort a numerical values in ascending order.
-   - Sort a given amount of numerical values by randomly change position of the values.
+   - Sort a given number of numerical values by randomly changing position of the values.
    - Should show the sorted numbers in ascending order with time duration of sorting process and numbers of position changes swapped. 
    - Should show all previous results.
    - The previous results must also remain if the application is restarted.
