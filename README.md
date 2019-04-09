@@ -31,7 +31,7 @@
    - Make sure your embedded server started.
    - Hit application url http://localhost:8080/
    - Displays Sort Application page.
-   - Enter un sorted numbers and click on Sort Numbers button.
+   - Enter un sorted numbers .
    - Click on Sort Numbers button.
    - Displays Sorted numbers in ascending order, duration, changes of positions.
    
