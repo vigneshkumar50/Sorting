@@ -7,9 +7,6 @@ public class SortResult {
 	private long duration;
 	private int swapCount;
 	private String status;
-	
-	public SortResult() {
-	}
 
 	/**
 	 * @param unSortedNumbers
@@ -18,8 +15,12 @@ public class SortResult {
 	 * @param swapCount
 	 * @param status
 	 */
-	public SortResult(String unSortedNumbers, String sortedNumbers, long duration, int swapCount, String status) {
-		super();
+	public SortResult(String unSortedNumbers,
+					 String sortedNumbers,
+					 long duration, 
+					 int swapCount,
+					 String status) {
+
 		this.unSortedNumbers = unSortedNumbers;
 		this.sortedNumbers = sortedNumbers;
 		this.duration = duration;
@@ -35,8 +36,7 @@ public class SortResult {
 	}
 
 	/**
-	 * @param unSortedNumbers
-	 *            the unSortedNumbers to set
+	 * @param unSortedNumbers the unSortedNumbers to set
 	 */
 	public void setUnSortedNumbers(String unSortedNumbers) {
 		this.unSortedNumbers = unSortedNumbers;
@@ -50,8 +50,7 @@ public class SortResult {
 	}
 
 	/**
-	 * @param sortedNumbers
-	 *            the sortedNumbers to set
+	 * @param sortedNumbers the sortedNumbers to set
 	 */
 	public void setSortedNumbers(String sortedNumbers) {
 		this.sortedNumbers = sortedNumbers;
@@ -65,8 +64,7 @@ public class SortResult {
 	}
 
 	/**
-	 * @param duration
-	 *            the duration to set
+	 * @param duration the duration to set
 	 */
 	public void setDuration(long duration) {
 		this.duration = duration;
@@ -80,8 +78,7 @@ public class SortResult {
 	}
 
 	/**
-	 * @param swapCount
-	 *            the swapCount to set
+	 * @param swapCount the swapCount to set
 	 */
 	public void setSwapCount(int swapCount) {
 		this.swapCount = swapCount;
@@ -100,8 +97,11 @@ public class SortResult {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
 	public String toString() {
-		return "Sort Result : (UnSorted Numbers=" + unSortedNumbers + ", Sorted Numbers=" + sortedNumbers
-				+ ", Duration=" + duration + " ms" + ", Changes of Positions=" + swapCount + ")";
+		return "Sort Result : (UnSorted Numbers=" + unSortedNumbers + ","
+				+ " Sorted Numbers=" + sortedNumbers
+				+ ", Duration=" + duration + " ms" 
+				+ ", Changes of Positions=" + swapCount + ")";
 	}
 }

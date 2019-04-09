@@ -9,17 +9,6 @@ public class UserInput {
 	@NotNull
 	@NotEmpty
 	private String unSortedNumbers;
-
-	public UserInput() {
-	}
-
-	/**
-	 * @param unSortedNumbers
-	 */
-	public UserInput(String unSortedNumbers) {
-		this.unSortedNumbers = unSortedNumbers;
-	}
-
 	/**
 	 * @return the unSortedNumbers
 	 */
